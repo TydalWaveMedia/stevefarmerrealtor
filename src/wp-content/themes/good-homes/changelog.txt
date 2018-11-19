@@ -1,0 +1,33 @@
+Version 1.3.1
+    Fixed:
+    - Properties search result
+    - Trx Addons plugin updated
+
+Version 1.3
+	Fixed: 
+		WordPress Version 4.9.4 ready 
+		Compatibility with PHP7
+		All plugins updated 
+		Importer updated 
+	    WPBakery Page Builder fixed
+	    Widgets position fixed
+
+Version 1.2.1
+	Change and save color schemes
+	Visual composer updated
+	Translation fixed
+
+Version 1.2
+	Add plugin RealEstate Auto Tag
+	Documentation updated
+	Display of Google Map in 'Property' post type is fixed
+
+Version 1.1
+	Plugins updated
+	Documentation updated
+	Dummy data import fixed
+
+Version 1.0
+	Release
+
+
