@@ -4,26 +4,29 @@ services:
     image: mysql:5.7
     restart: always
     volumes:
-      - db_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
     ports:
       - "8081:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: OneMoreSale69
-      MYSQL_DATABASE: tydal-db
+      MYSQL_ROOT_PASSWORD: OneMoreSale69~
+      MYSQL_DATABASE: tydal_stevefarmerrealtor
+      MYSQL_USER: tydal_wp
+      MYSQL_PASSWORD: OneMoreSale69
 
   tydal-wp:
     depends_on:
       - tydal-db
-    image: wordpress
-    restart: always
+    build: .
     volumes:
-      - ./src/wp-content:/var/www/html/wp-content
+      - ./src:/var/www/html
     links:
       - tydal-db:mysql
     ports:
       - 8000:80
       - 8443:443
     environment:
+      WORDPRESS_DB_NAME: tydal_stevefarmerrealtor
+      WORDPRESS_DB_USER: tydal_wp
       WORDPRESS_DB_PASSWORD: OneMoreSale69
 
   tydal-phpmyadmin:
@@ -35,7 +38,4 @@ services:
       - 9000:80
     environment:
       PMA_HOST: tydal-db
-      MYSQL_ROOT_PASSWORD: OneMoreSale69
-
-volumes:
-  db_data:
+      MYSQL_ROOT_PASSWORD: OneMoreSale69~
